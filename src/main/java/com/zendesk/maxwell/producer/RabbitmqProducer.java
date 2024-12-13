@@ -61,6 +61,8 @@ public class RabbitmqProducer extends AbstractProducer {
 				factory.setHandshakeTimeout(config.rabbitmqHandshakeTimeout);
 			}
 
+      factory.useSslProtocol();
+
 			this.channel = factory.newConnection().createChannel();
 			if(context.getConfig().rabbitmqDeclareExchange) {
 				this.channel.exchangeDeclare(exchangeName, context.getConfig().rabbitmqExchangeType, context.getConfig().rabbitMqExchangeDurable, context.getConfig().rabbitMqExchangeAutoDelete, null);

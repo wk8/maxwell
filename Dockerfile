@@ -1,3 +1,6 @@
+# docker buildx create --use --name mybuilder
+# docker buildx build --platform linux/amd64,linux/arm64 -t wk88/maxwell:latest --push  .
+
 FROM maven:3.8-jdk-11 as builder
 ENV MAXWELL_VERSION=1.41.2 KAFKA_VERSION=1.0.0
 
